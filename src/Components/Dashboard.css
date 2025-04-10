@@ -1,0 +1,401 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+.onee{
+    width: 132px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.dark-mode .navbar {
+  background-color: #1f1f1f;
+}
+
+
+.navbar-left {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.menu-icon {
+  display: block; /* Ensure the menu icon is visible for all screen sizes */
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.fa-xmark{
+  display: none;
+}
+
+
+.menu-icon {
+  display: none; /* Initially hide the menu icon for screens wider than 768px */
+}
+
+.menu-options {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+
+}
+
+.menu-options.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hell {
+  display: flex;
+}
+
+.nav-option {
+  cursor: pointer;
+}
+
+.nav-select {
+  background-color: #0056b3;
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dark-mode .nav-select {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+.nav-select option {
+  background-color: white;
+  color: black;
+}
+
+.content {
+  padding: 20px;
+}
+
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.article {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  width: calc(33.333% - 20px);
+  margin-bottom: 20px;
+}
+
+.dark-mode .article {
+  background-color: #333;
+  border-color: #555;
+}
+
+.article:hover {
+  transform: scale(1.03);
+}
+
+.article-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.article h3 {
+  font-size: 20px;
+  margin: 15px 10px;
+  color: #333;
+}
+
+.dark-mode .article h3 {
+  color: #fff;
+}
+
+.article p {
+  font-size: 14px;
+  margin: 0 10px 10px;
+  color: #666;
+}
+
+.dark-mode .article p {
+  color: #ccc;
+}
+
+.article a {
+  display: block;
+  margin: 10px;
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.dark-mode .article a {
+  color: #80b3ff;
+}
+
+.article a:hover {
+  text-decoration: underline;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* Adjust as needed */
+}
+
+.dark-mode .welcome-message {
+  font-size: 1.5rem;
+  color: #ffffff; /* Green color */
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  border: 2px solid #a8a8a8;
+  border-radius: 10px;
+  padding: 13px;
+  background-color: #2e2e2e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.dark-mode .welcome-message:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+
+.welcome-message {
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.6rem;
+  color: #0056b3; /* Green color */
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  border: 2px solid #0056b3;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.welcome-message:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+.loading-image {
+  width: 70px; /* Adjust as needed */
+  height: 70px; /* Adjust as needed */
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Toggle switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #a3a3a3;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #0056b3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.dark-mode h2 {
+  color: white;
+}
+
+.nav-option.logout {
+  background-color: #ff263b;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-option.logout:hover {
+  background-color: #ff3149;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 22px;
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .menu-icon {
+    display: block; /* Show the menu icon for screens narrower than 768px */
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .nav-select {
+    width: 100%;
+  }
+
+  .articles {
+    flex-direction: column;
+  }
+
+  .article {
+    width: 100%;
+  }
+
+  .article h3 {
+    font-size: 18px;
+  }
+
+  .article p {
+    font-size: 12px;
+  }
+
+  .menu-options {
+    position: fixed; /* Use fixed position */
+    display: flex;
+    flex-direction: column;
+    top: 90px; /* Adjust as needed based on your navbar height */
+    right: 20px;
+    background-color: #0059b9dd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 25px;
+    gap: 30px;
+    transform: translateX(100%); /* Initially place it off-screen to the right */
+    opacity: 0; /* Initially hide the menu options */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for transform and opacity properties */
+  }
+
+  .dark-mode .menu-options {
+    background-color: #2b2a2aec;
+  }
+
+  .menu-options.open {
+    transform: translateX(0); /* Move it into view */
+    opacity: 1; /* Show the menu options */
+  }
+
+  .fa-sun {
+    color: rgb(255, 255, 255);
+  }
+
+  .fa-moon {
+    color: rgb(255, 255, 255);
+  }
+
+  .fa-xmark {
+    display: block;
+    color: black;
+    font-size: 20px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 45%;
+    background-color: #ffffff;
+  }
+  .welcome-message {
+    font-size: 1.3rem;
+  }
+
+  .welcome-message .dark-mode {
+    font-size: 1.3rem;
+  }
+
+  .onee{
+    width: 132px;
+  }
+}
+
+
